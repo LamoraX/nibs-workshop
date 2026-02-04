@@ -9,19 +9,28 @@
   -webkit-overflow-scrolling: touch;
 }
 
-/* Actual table */
+/* Actual table - REMOVED min-width to allow natural wrapping */
 .table-scroll table {
   width: 100%;
-  min-width: 1000px;   /* forces horizontal scroll */
   border-collapse: collapse;
+  /* min-width removed - table can shrink naturally now */
 }
 
-/* Table cells */
+/* Table cells - Allow wrapping but set reasonable max-width */
 .table-scroll th,
 .table-scroll td {
   padding: 10px;
   text-align: left;
   vertical-align: top;
+  /* Let text wrap naturally */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Prevent time column from getting too small */
+.table-scroll .time-cell {
+  white-space: nowrap;  /* Keep time on one line */
+  min-width: 80px;
 }
 
 /* Optional: alternate row shading */
