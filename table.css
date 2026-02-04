@@ -24,3 +24,14 @@
 .table-responsive tr:nth-child(even) {
   background-color: #fafafa;
 }
+
+/* FORCE horizontal scrolling for schedule tables */
+.schedule-table {
+  overflow-x: visible; /* allow child to scroll */
+}
+
+/* actual scrolling happens here */
+.schedule-table .table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
